@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links a:hover{
+            text-transform: capitalize; 
+            font-weight: bold;
+            color: hsl(281, 100%, 50%);
+            transition: .4s;
+        }
+
+        section {
+            padding: 50px;
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .accueil-content {
+            display: flex;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .projets-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .projet-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .competences-container {
+            width: 100%;
+            max-width: 800px; 
+            margin: 0 auto; 
+            background-color: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); ;
+        }
+
+        .skills {
+            display: flex; 
+            justify-content: space-between; 
+            margin-top: 20px; 
+        }
+        .left-skills, .right-skills {
+            width: 48%; 
+        }
+        .skill {
+            margin-bottom: 15px; 
+        }
+        .skill-label {
+            display: flex; 
+            justify-content: space-between;
+            align-items: center; 
+        }
+        .progress {
+            width: 100%; 
+            background-color: #e0e0e0; 
+            border-radius: 5px; 
+            overflow: hidden; 
+        }
+        .progress-bar {
+            height: 20px; 
+            background-color:hsl(281, 100%, 50%); 
+            width: 0; 
+            transition: width 0.5s; 
+        }
+         
+
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        input, textarea  {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .circle-img {
+            width: auto; 
+            height: auto; 
+            border-radius: 50%;  
+            border: 5px solid hsl(281, 100%, 50%);
+            overflow: hidden;
+            flex:0 0 220px;
+        }
+        .circle{
+            flex:0 0 220px; 
+            height: 80px; 
+            align-items: center; 
+            justify-content: center; 
+            margin-left: 10%;
+             
+        }
+        .image {
+            flex:0 0 220px; 
+            height: 80px; 
+            align-items: center; 
+            justify-content: center; 
+            margin-left: 10%;
+           
+        }
+        .image img {
+            width: 100%; 
+            height: auto; 
+        }
+
+        button {
+            padding: 10px 25px;
+            background-color:hsl(281, 100%, 50%);
+            color: white;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 30px; 
+            transition: transform .4s;
+        }
+        button:hover {
+            background-color:chartreuse; 
+            transform: scale(1.2);
+        }
+        .button-container {
+            margin-top: 20px; 
+            align-self: flex-start ;
+            margin-left: 180px;
+         }
+         .bouton-container8{
+            margin-top: 20px; 
+            align-self: flex-start ;
+            margin-left: 180px; 
+            color: gold;
+         }
+        .button-container2 {
+            margin-top: -15px; 
+            align-self: flex-start ;
+            margin-left: 0px;
+            
+        }
+        span{
+            color: hsl(281, 100%, 50%);
+        }
+        .game-container {
+            background-color:azure; 
+            border-radius: 8px; 
+            padding: 20px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            text-align: center; 
+            flex: 1; 
+            margin: 10px; 
+             }
+             .result {
+            margin-top: 20px; 
+            font-size: 20px; 
+            color: #333;
+             }
+             .container {
+            width: 80%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+        }
+        label {
+            display: block; 
+            margin: 10px 0 5px; 
+            color:whitesmoke; 
+        }
+        input, textarea {
+            width: 100%; 
+            padding: 10px; 
+            margin-bottom: 15px; 
+            border: 1px solid #ccc;
+            border-radius: 4px; 
+            font-size: 16px; 
+        }
+        .container3{
+            width: 80%; 
+            max-width: 500px; 
+            margin: 50px auto; 
+            padding: 20px; 
+            background-color:hwb(0 0% 0%); 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px black; 
+        }
+        .image-container {
+    padding-left: 280px;
+}
+.cercle {
+    width: 230px; /* Largeur de l'image */
+    height: 230px; /* Hauteur de l'image */
+    border-radius: 50%; /* Pour rendre l'image circulaire */
+    border: solid 5px; /* Bordure transparente par défaut */
+    /* Bordure bleue à droite */
+     color: blueviolet;
+    
+}
+.container20{
+    
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    width: 80%; 
+    margin: 5px;
+}
+.text p{
+    flex: 1; 
+    margin-right: 5px;
+    margin-bottom: 20px; 
+}
+.section2{
+    background-color: #ccc;
+}
+.section6{
+    background-color: black;
+}
+h1 {
+            font-size: 2.5em; 
+            margin-bottom: 20px; 
+            text-align: center;
+        }
+        h2 {
+            font-size:2.1em; 
+            margin-bottom: 20px; 
+            text-align: center;
+            
+        }
+        .projet6{
+            background-color: black
+            
+           }  
+        h4 {
+            font-size: 2.5em; 
+            margin-bottom: 20px; 
+            text-align: center;
+            color: white;
+        }
+        h5{
+            font-size: 2em; 
+            margin-bottom: 20px; 
+            text-align: center;
+            color: white;   
+        }
+         
+    </style>
+</head>
+<body>
+    <nav>
+        <div> <h2>KAYEMB <span>Joel</span></h2></div>
+        <div class="nav-links">
+            <a href="#accueil" onclick="showSection('accueil')">Accueil</a>
+            <a href="#apropos" onclick="showSection('apropos')">À propos</a>
+            <a href="#projets" onclick="showSection('projets')">Projets</a>
+            <a href="#competences" onclick="showSection('competences')">Compétences</a>
+            <a href="#contact" onclick="showSection('contact')">Contact</a>
+        </div>
+    </nav>
+    <section class="section" id="accueil" >
+        <div class="active">
+        <div class="accueil-content">
+            <div>
+                <h1>Je suis <span> Joel</span>, Developpeur en devenir <br> passionné par le web et le design! </h1>
+                <div class="button-container">
+                <button onclick="showSection('projet6')">Voir mes projets</button>
+                </div>
+            </div>
+            <div class="image">
+            <img src="accueil.jpg" alt="" width="200">
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section2" id="apropos">
+        <h1> <span>À propos</span></h1>
+        <div style="display: flex; gap: 50px; margin-top: 30px; margin-bottom: 20px;">
+            <div>
+            
+                <div class="container20">
+       
+                    <div class="text">
+                <p>Je m'appelle <span> KAYEMB</span>, passionné par la <br> creation de sites web modernes et interactifs.</p>
+                <p>Je suis actuellement etudiant en <span> developpement web</span>,<br> et je cherche a ameliorer mes competences en javaScriprt, HTML et CSS </p>
+                <P>J'adore transformer mes idées en projets concrets <br> et experimenter avec les nouvelles technologies.</P>
+            </div>
+        </div>
+                <div class="button-container2">
+                    <a href="cvdejoel.pdf" download> 
+                        <button>Télécharger mon CV</button>
+                    </a>
+                    
+                </div>
+            </div>
+           
+            <div class="image-container">
+                <img src="approp.jpg" alt="" class="cercle">
+            </div>
+        </div>
+    </section>
+    <section class="section3" id="projets">
+        <h1>Mes projets</h1>
+        <div class="container">
+            <div class="game-container" id="fruitGame">
+                <h2>Essayons un tour de magie gratuit </h2>
+                <button onclick="guessFruit()">Top c’est partis !!!</button>
+                <div class="result" id="fruitResult"></div>
+            </div>
+            <div class="game-container" id="sportGame">
+                <h2>Encore une fois s'il vous plait</h2>
+                <button onclick="guessSport()">Top c’est partis !!!</button>
+                <div class="result" id="sportResult"></div>
+            </div>
+            <div class="game-container" id="genderGame">
+                <h2>Un dernier tour s’il vous plait  </h2>
+                <button onclick="guessGender()">Top c’est partis !!!</button>
+                <div class="result" id="genderResult"></div>
+            </div>
+        </div>
+      </section>     
+    <section class="section4" id="competences">
+        <h1>Mes compétences</h1>
+        <div class="competences-container">  </div>
+        <div class="skills">
+            <div class="left-skills">
+                <div class="skill">
+                    <div class="skill-label">
+                        <h3>Gestion de projet</h3>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-label">
+                        <h3>Résolution de problèmes</h3>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 89%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-label">
+                        <h3>Adaptabilité</h3>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-skills">
+                <div class="skill">
+                    <div class="skill-label">
+                        <h3> HTML</h3>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-label">
+                        <h3> CSS</h3>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-label">
+                        <h3> VS Code</h3>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 95%;"></div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-label">
+                            <h3>JavaScript</h3>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%;"></div>
+                        </div>
+    </section>
+    <section class="section5" id="contact">
+        <h1>Contact</h1>
+        <div class="container3"> 
+        <form action="mailto:joelkayemb04@gmail" method="post">
+            <label for="name">Entrez votre nom</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Entrez votre adresse email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="country">Votre pays d'origine</label>
+            <input type="text" id="country" name="country" required>
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <div class="bouton-container8"></div>
+            <button type="submit">Envoyer</button>   
+        </form>  
+    </div>
+</section>   
+    <section class="section6" id="projet6">
+        <div class="container90"></div>
+        <h4>Vous avez un <span>projet en tête?</span></h4>
+        <h5>  N'hesitez pas a me <span>contacter</span></h5>
+        <form action="mailto:joelkayemb04@email.com" method="post"> </form>
+            <div style="display: flex; gap: 20px;">
+                <input type="text" placeholder="Prénom">
+                <input type="text" placeholder="Nom">
+            </div>
+            <input type="text" placeholder="Sujet">
+            <textarea placeholder="Description du projet"></textarea>
+            <div class="bouton-container8">
+            <button type="submit">Envoyer </button></form>
+            </div>
+    </section>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+        function guessFruit() {
+            const fruits = ["Pomme", "Banane", "Fraise", "Orange", "Kiwi"];
+            const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+            document.getElementById('fruitResult').textContent = `Votre fruit préféré est: ${randomFruit}`;
+        }
+        function guessSport() {
+            const sports = ["Football", "Basketball", "Tennis", "Natation", "Cyclisme"];
+            const randomSport = sports[Math.floor(Math.random() * sports.length)];
+            document.getElementById('sportResult').textContent = `Votre sport préféré est: ${randomSport}`;
+        }
+        function guessGender() {
+            const genders = ["Homme", "Femme", "Autre"];
+            const randomGender = genders[Math.floor(Math.random() * genders.length)];
+            document.getElementById('genderResult').textContent = `Votre sexe est: ${randomGender}`;
+        }
+
+    </script>
+</body>
+</html>
